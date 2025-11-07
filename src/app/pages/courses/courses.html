@@ -1,0 +1,191 @@
+<!-- Hero Section -->
+<section class="courses-hero-section">
+  <div class="courses-hero-container">
+    <div class="courses-hero-background">
+      <div class="courses-hero-pattern"></div>
+      <div class="courses-hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="courses-hero-content">
+        <div class="coming-soon-badge">
+          <span>Coming Soon</span>
+        </div>
+
+        <h1 class="courses-hero-title">
+          Amazing Courses
+          <span class="accent">Are On The Way</span>
+        </h1>
+
+        <p class="courses-hero-description">
+          We're working hard to bring you the best programming courses and bootcamps.
+          Our team is crafting comprehensive curriculum that will transform your career.
+        </p>
+
+        <div class="countdown-container">
+          <!-- <div class="countdown-title">Launching In</div>
+          <div class="countdown-grid">
+            <div class="countdown-item">
+              <div class="countdown-number">30</div>
+              <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">12</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">45</div>
+              <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-item">
+              <div class="countdown-number">30</div>
+              <div class="countdown-label">Seconds</div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features Preview Section -->
+<section class="features-preview-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What to Expect</h2>
+      <p class="section-subtitle">
+        Get ready for an exceptional learning experience
+      </p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-preview-card">
+        <div class="feature-icon">🚀</div>
+        <h3>Project-Based Learning</h3>
+        <p>Build real-world projects that showcase your skills to employers</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <div class="feature-icon">👨‍🏫</div>
+        <h3>Expert Instructors</h3>
+        <p>Learn from industry professionals with years of experience</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <div class="feature-icon">💼</div>
+        <h3>Career Support</h3>
+        <p>Get job-ready with our comprehensive career services</p>
+      </div>
+
+      <div class="feature-preview-card">
+        <div class="feature-icon">🤝</div>
+        <h3>Community</h3>
+        <p>Join a supportive network of learners and mentors</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Coming Soon Section -->
+<section class="coming-soon-section section-padding">
+  <div class="container">
+    <div class="coming-soon-content">
+      <div class="coming-soon-visual">
+        <div class="pulse-animation">
+          <div class="pulse-circle-1"></div>
+          <div class="pulse-circle-2"></div>
+          <div class="pulse-circle-3"></div>
+          <div class="main-icon">🎯</div>
+        </div>
+      </div>
+
+      <div class="coming-soon-text">
+        <h2>We're Crafting Something Special</h2>
+        <p>
+          Our courses are being designed with care to ensure you get the best possible
+          learning experience. We're focusing on:
+        </p>
+
+        <ul class="focus-list">
+          <li>
+            <span class="list-icon">✓</span>
+            <span>Industry-relevant curriculum</span>
+          </li>
+          <li>
+            <span class="list-icon">✓</span>
+            <span>Hands-on coding exercises</span>
+          </li>
+          <li>
+            <span class="list-icon">✓</span>
+            <span>Real-world project experience</span>
+          </li>
+          <li>
+            <span class="list-icon">✓</span>
+            <span>Personalized feedback and support</span>
+          </li>
+        </ul>
+
+        <!-- Notification Form -->
+        <div class="notification-form" *ngIf="!isSubscribed">
+          <h3>Get Notified When We Launch</h3>
+          <p>Be the first to know when our courses are available</p>
+
+          <!-- <div class="form-group">
+            <input
+              type="email"
+              [(ngModel)]="email"
+              placeholder="Enter your email address"
+              class="email-input"
+            >
+            <button
+              class="notify-btn"
+              (click)="subscribeToNotifications()"
+              [class.loading]="false"
+            >
+              <span class="btn-text">Notify Me</span>
+              <span class="btn-loader">⏳</span>
+            </button>
+          </div>
+        </div> -->
+
+        <!-- Success Message -->
+        <div class="success-message" *ngIf="isSubscribed">
+          <div class="success-icon">🎉</div>
+          <h3>You're on the list!</h3>
+          <p>We'll send you an email as soon as our courses are ready. Thank you for your interest!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!-- CTA Section -->
+<section class="courses-cta-section">
+  <div class="courses-cta-background">
+    <div class="courses-cta-pattern"></div>
+    <div class="courses-cta-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="courses-cta-content">
+      <h2 class="courses-cta-title">Have Questions?</h2>
+      <p class="courses-cta-description">
+        Our team is here to help you choose the right path for your learning journey.
+      </p>
+      <div class="courses-cta-actions">
+        <a href="academycodecraft72@gmail.com" class="btn btn-primary">
+          <span>Contact Us</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </a>
+        <a href="#" class="btn btn-secondary">
+          <span>Call Us</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

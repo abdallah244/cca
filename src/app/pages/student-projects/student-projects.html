@@ -1,0 +1,145 @@
+<!-- Student Projects Section -->
+<section class="student-projects-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Student Projects</h2>
+      <p class="section-subtitle">
+        See what our students have built during their learning journey
+      </p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of studentProjects">
+        <div class="project-image">
+          <img [src]="project.projectImage" [alt]="project.title" class="project-img">
+          <div class="project-overlay">
+            <button class="view-project-btn" (click)="openProjectModal(project)">
+              View Project
+            </button>
+          </div>
+          <div class="project-badge" [class]="project.status.toLowerCase().replace(' ', '-')">
+            {{ project.status }}
+          </div>
+        </div>
+
+        <div class="project-content">
+          <h3 class="project-title">{{ project.title }}</h3>
+          <p class="project-course">{{ project.course }}</p>
+          <p class="project-description">{{ project.description }}</p>
+
+          <div class="project-technologies">
+            <span class="tech-label">Technologies:</span>
+            <div class="tech-tags">
+              <span class="tech-tag" *ngFor="let tech of project.technologies.slice(0, 3)">{{ tech }}</span>
+              <span class="tech-tag more" *ngIf="project.technologies.length > 3">
+                +{{ project.technologies.length - 3 }}
+              </span>
+            </div>
+          </div>
+
+          <div class="project-student">
+            <div class="student-info">
+              <img [src]="project.studentImage" [alt]="project.studentName" class="student-avatar">
+              <span class="student-name">{{ project.studentName }}</span>
+            </div>
+          </div>
+
+          <div class="project-actions">
+            <button class="btn-learn-more" (click)="openProjectModal(project)">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Modal -->
+<div class="modal-backdrop"
+     [class.active]="selectedProject"
+     (click)="onBackdropClick($event)">
+  <div class="modal-container" *ngIf="selectedProject">
+    <div class="modal-header">
+      <h2 class="modal-title">{{ selectedProject.title }}</h2>
+      <button class="close-button" (click)="closeProjectModal()" aria-label="Close modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal-content">
+      <!-- Project Overview -->
+      <div class="project-overview">
+        <div class="project-hero">
+          <img [src]="selectedProject.projectImage" [alt]="selectedProject.title" class="project-hero-image">
+          <div class="project-status" [class]="selectedProject.status.toLowerCase().replace(' ', '-')">
+            {{ selectedProject.status }}
+          </div>
+        </div>
+
+        <div class="project-details">
+          <!-- Student Info -->
+          <div class="student-card">
+            <div class="student-header">
+              <img [src]="selectedProject.studentImage" [alt]="selectedProject.studentName" class="student-modal-avatar">
+              <div class="student-info">
+                <h3 class="student-name">{{ selectedProject.studentName }}</h3>
+                <p class="student-course">{{ selectedProject.course }}</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Description -->
+          <div class="description-section">
+            <h3>Project Description</h3>
+            <p>{{ selectedProject.description }}</p>
+          </div>
+
+          <!-- Technologies Used -->
+          <div class="technologies-section">
+            <h3>Technologies Used</h3>
+            <div class="technologies-grid">
+              <span class="technology-tag" *ngFor="let tech of selectedProject.technologies">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- Key Features -->
+          <div class="features-section">
+            <h3>Key Features</h3>
+            <ul class="features-list">
+              <li *ngFor="let feature of selectedProject.features">
+                <span class="feature-icon">✓</span>
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+
+          <!-- Project Links -->
+          <div class="links-section">
+            <h3>Project Links</h3>
+            <div class="links-grid">
+              <a [href]="selectedProject.liveDemo" target="_blank" class="project-link live-demo" *ngIf="selectedProject.liveDemo">
+                <span class="link-icon">🌐</span>
+                <span>Live Demo</span>
+              </a>
+              <a [href]="selectedProject.githubRepo" target="_blank" class="project-link github" *ngIf="selectedProject.githubRepo">
+                <span class="link-icon">🐙</span>
+                <span>GitHub Repository</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-close-modal" (click)="closeProjectModal()">
+        Close Project
+      </button>
+    </div>
+  </div>
+</div>

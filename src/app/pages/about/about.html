@@ -1,0 +1,190 @@
+<!-- Hero Section -->
+<section class="about-hero-section">
+  <div class="about-hero-container">
+    <div class="about-hero-background">
+      <img src="heroo.png" alt="About CodeCraft Academy" class="about-hero-image">
+      <div class="about-hero-overlay"></div>
+    </div>
+
+    <div class="container">
+      <div class="about-hero-content">
+        <div class="about-hero-text">
+          <h1 class="about-hero-title">
+            Building the Next Generation
+            <span class="accent">of Developers</span>
+          </h1>
+          <p class="about-hero-description">
+            At CodeCraft Academy, we're passionate about transforming lives through code.
+            Our mission is to make quality programming education accessible to everyone,
+            regardless of their background or experience level.
+          </p>
+          <div class="about-hero-actions">
+            <a routerLink="/courses" class="btn btn-primary">Explore Our Courses</a>
+            <a href="#founder" class="btn btn-secondary">Meet Our Founder</a>
+          </div>
+        </div>
+
+        <div class="about-hero-visual">
+          <div class="floating-element element-1">
+            <div class="element-icon">💻</div>
+            <span>Code</span>
+          </div>
+          <div class="floating-element element-2">
+            <div class="element-icon">🚀</div>
+            <span>Grow</span>
+          </div>
+          <div class="floating-element element-3">
+            <div class="element-icon">🌟</div>
+            <span>Succeed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What is CCA Section -->
+<section class="what-is-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">What is CodeCraft Academy?</h2>
+      <p class="section-subtitle">
+        More than just a coding school - we're a launchpad for tech careers
+      </p>
+    </div>
+
+    <div class="what-is-content">
+      <div class="what-is-text">
+        <p>
+          CodeCraft Academy was born from a simple observation: traditional education often fails
+          to prepare students for the fast-paced world of software development. We've created an
+          ecosystem where theory meets practice, and learning is driven by real-world projects.
+        </p>
+
+        <div class="mission-vision">
+          <div class="mission-card">
+            <h3>Our Mission</h3>
+            <p>
+              To democratize access to quality tech education and empower individuals
+              with the skills needed to thrive in the digital economy.
+            </p>
+          </div>
+
+          <div class="vision-card">
+            <h3>Our Vision</h3>
+            <p>
+              To become the leading platform for practical programming education in the
+              Middle East and Africa, creating thousands of success stories.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="what-is-image">
+        <img src="aboutn.png" alt="CCA Community" class="what-is-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Founder Section -->
+<section id="founder" class="founder-section section-padding">
+  <div class="container">
+    <div class="founder-content">
+      <div class="founder-image">
+        <img [src]="founder.image" [alt]="founder.name" class="founder-img">
+        <div class="founder-badge">
+          <span>Founder & CEO</span>
+        </div>
+      </div>
+
+      <div class="founder-info">
+        <h2 class="section-title">Meet {{ founder.name }}</h2>
+        <p class="founder-story">{{ founder.story }}</p>
+
+        <div class="achievements">
+          <h3>Key Achievements</h3>
+          <div class="achievements-grid">
+            <div class="achievement-item" *ngFor="let achievement of founder.achievements">
+              <div class="achievement-icon">✓</div>
+              <span>{{ achievement }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founder-cta">
+          <p>Ready to start your coding journey?</p>
+          <a routerLink="/courses" class="btn btn-primary">Join Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose CCA Section -->
+<section class="why-choose-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Why Choose CodeCraft Academy?</h2>
+      <p class="section-subtitle">
+        Discover what makes us different from other coding schools
+      </p>
+    </div>
+
+    <div class="reasons-grid">
+      <div class="reason-card" *ngFor="let reason of reasons">
+        <div class="reason-icon">
+          {{ reason.icon }}
+        </div>
+        <h3 class="reason-title">{{ reason.title }}</h3>
+        <p class="reason-description">{{ reason.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Follow CCA Section -->
+<section class="follow-section section-padding">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Follow CCA Everywhere</h2>
+      <p class="section-subtitle">
+        Join our growing community across all platforms
+      </p>
+    </div>
+
+    <div class="platforms-grid">
+      <div class="platform-card" *ngFor="let platform of platforms">
+        <div class="platform-header">
+          <div class="platform-icon">{{ platform.icon }}</div>
+          <h3 class="platform-name">{{ platform.name }}</h3>
+        </div>
+        <!-- <div class="platform-followers">{{ platform.followers }} Followers</div> -->
+        <p class="platform-description">{{ platform.description }}</p>
+        <a [href]="platform.link" class="platform-link">Follow Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="final-cta-section">
+  <div class="final-cta-background">
+    <img src="cta.png" alt="Start Your Journey" class="final-cta-image">
+    <div class="final-cta-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="final-cta-content">
+      <h2 class="final-cta-title">Ready to Transform Your Career?</h2>
+      <p class="final-cta-description">
+        Join thousands of students who have launched their tech careers with CodeCraft Academy.
+        Your journey starts here.
+      </p>
+      <div class="final-cta-actions">
+        <a routerLink="/courses" class="btn btn-primary">Browse Courses</a>
+        <a routerLink="/courses" class="btn btn-secondary">Talk to Advisor</a>
+      </div>
+    </div>
+  </div>
+</section>

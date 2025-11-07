@@ -1,0 +1,65 @@
+<header class="header" [class.scrolled]="isScrolled">
+  <nav class="nav container">
+    <!-- Logo -->
+    <div class="logo">
+      <a routerLink="/" class="logo-link" (click)="closeMenu()">
+        <div class="logo-image">
+          <img src="logoo.png" alt="CodeCraft Academy" class="logo-img">
+        </div>
+        <span class="logo-full">CodeCraft Academy</span>
+      </a>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="nav-menu" [class.active]="isMenuOpen">
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a routerLink="/" class="nav-link" (click)="closeMenu()">Home</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/about" class="nav-link" (click)="closeMenu()">About</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/courses" class="nav-link" (click)="closeMenu()">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link" (click)="closeMenu()" onclick="alert('soon')">Student Projects</a>
+        </li>
+        <li class="nav-item">
+          <a href="#testimonials" class="nav-link" (click)="closeMenu()">Testimonials</a>
+        </li>
+
+        <!-- Theme Toggle for Desktop -->
+        <li class="nav-item desktop-only">
+          <button class="theme-toggle" (click)="toggleTheme()" [class.dark]="isDarkMode">
+            <span class="theme-icon">
+              <span class="sun">☀️</span>
+              <span class="moon">🌙</span>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Right Side Actions -->
+    <div class="nav-actions">
+      <!-- Theme Toggle for Mobile -->
+      <button class="theme-toggle mobile-only" (click)="toggleTheme()" [class.dark]="isDarkMode">
+        <span class="theme-icon">
+          <span class="sun">☀️</span>
+          <span class="moon">🌙</span>
+        </span>
+      </button>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="menu-toggle"
+              [class.active]="isMenuOpen"
+              (click)="toggleMenu()"
+              aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+</header>
